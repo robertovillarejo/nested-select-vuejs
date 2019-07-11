@@ -1,14 +1,14 @@
 {
-  "name": "menu",
+  "name": "nested-select",
   "version": "1.0.0",
-  "description": "menu component for conacyt",
-  "main": "dist/js/menu-component.js",
-  "unpkg": "dist/js/menu-component.min.js",
+  "description": "A VueJS component for rendering nested select HTML tags based on a hierarchy model",
+  "main": "dist/js/nested-select.js",
+  "unpkg": "dist/js/nested-select.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production node_modules/.bin/rollup -c ./build/rollup.config.js && NODE_ENV=production BUILD_MODE=minify node_modules/.bin/rollup -c ./build/rollup.config.js"
   },
-  "author": "conacyt",
+  "author": "Roberto Villarejo Martínez",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {

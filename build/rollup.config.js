@@ -8,9 +8,9 @@ const isMinify = process.env.BUILD_MODE === 'minify';
 export default {
     input: 'src/index.js',
     output: {
-        file: isMinify ? 'dist/js/menu-component.min.js' : 'dist/js/menu-component.js',
+        file: isMinify ? 'dist/js/nested-select.min.js' : 'dist/js/nested-select.js',
         format: 'umd',
-        name: 'MenuComponent',
+        name: 'NestedSelect',
     },
     plugins: [
         commonjs(),

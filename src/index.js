@@ -1,3 +1,3 @@
-import MenuComponent from './component/index.vue';
+import NestedSelect from './component/index.vue';
 
-export default MenuComponent;
+export default NestedSelect;

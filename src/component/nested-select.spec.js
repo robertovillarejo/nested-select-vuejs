@@ -1,28 +1,28 @@
 import Vue from 'vue';
-import MenuComponent from './index.vue';
+import NestedSelect from './index.vue';
 
 // Here are some Jasmine 2.0 tests, though you can
 // use any test runner / assertion library combo you prefer
-describe('MenuComponent', () => {
+describe('NestedSelect', () => {
   // Inspect the raw component options
   it('has a created hook', () => {
-    // expect(typeof MenuComponent.created).toBe('function');
+    // expect(typeof NestedSelect.created).toBe('function');
   })
   // Evaluate the results of functions in
   // the raw component options
   it('sets the correct default data', () => {
-    // expect(typeof MenuComponent.data).toBe('function')
-    // const defaultData = MenuComponent.data();
+    // expect(typeof NestedSelect.data).toBe('function')
+    // const defaultData = NestedSelect.data();
     // expect(defaultData.message).toBe('hello!');
   })
   // Inspect the component instance on mount
   it('correctly sets the message when created', () => {
-    // const vm = new Vue(MenuComponent).$mount();
+    // const vm = new Vue(NestedSelect).$mount();
     // expect(vm.message).toBe('bye!');
   })
   // Mount an instance and inspect the render output
   it('renders the correct message', () => {
-    // const Ctor = Vue.extend(MenuComponent);
+    // const Ctor = Vue.extend(NestedSelect);
     // const vm = new Ctor().$mount();
     // expect(vm.$el.textContent).toBe('bye!');
   })

@@ -1,11 +1,11 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.MenuComponent = factory());
+  (global = global || self, global.NestedSelect = factory());
 }(this, function () { 'use strict';
 
   var script = {
-    name: 'menu-component',
+    name: 'nested-select',
     components: {},
     props: [],
 
@@ -110,12 +110,12 @@
 
   /* template */
   var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)};
-  var __vue_staticRenderFns__ = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"menu"},[_c('h1',[_vm._v("menu Component")])])}];
+  var __vue_staticRenderFns__ = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},[_c('h1',[_vm._v("Nested Select Component")])])}];
 
     /* style */
     const __vue_inject_styles__ = undefined;
     /* scoped */
-    const __vue_scope_id__ = "data-v-feb69046";
+    const __vue_scope_id__ = "data-v-5df6eaee";
     /* module identifier */
     const __vue_module_identifier__ = undefined;
     /* functional template */
@@ -126,7 +126,7 @@
     
 
     
-    var MenuComponent = normalizeComponent_1(
+    var NestedSelect = normalizeComponent_1(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
@@ -137,6 +137,6 @@
       undefined
     );
 
-  return MenuComponent;
+  return NestedSelect;
 
 }));

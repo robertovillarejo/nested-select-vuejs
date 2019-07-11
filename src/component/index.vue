@@ -1,4 +1,4 @@
-<template src="./menu.html"></template>
-<script src="./menu.js"></script>
-<style src="./menu.css" scoped lang="css"></style>
+<template src="./nested-select.html"></template>
+<script src="./nested-select.js"></script>
+<style src="./nested-select.css" scoped lang="css"></style>
 

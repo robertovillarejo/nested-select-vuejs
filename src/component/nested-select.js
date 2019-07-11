@@ -1,5 +1,5 @@
 export default {
-  name: 'menu-component',
+  name: 'nested-select',
   components: {},
   props: [],
   data () {
