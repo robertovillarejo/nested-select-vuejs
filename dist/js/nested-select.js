@@ -1747,8 +1747,6 @@
 	      }
 	    },
 	    selectChanged: function (value, selectIndex) {
-	      console.log(value);
-
 	      if (selectIndex === this.hierarchy.length - 1) {
 	        this.$emit('input', value);
 	      } else {

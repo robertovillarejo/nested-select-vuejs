@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchy="hierarchyModel"
-            v-model="myModel">
+            v-model="myModel" @change="printMyModel">
         </nested-select>
     </div>
 
@@ -37,6 +37,11 @@
                             label: 'title'
                         }
                     ]
+                }
+            },
+            methods: {
+                printMyModel: function() {
+                    console.log(this.myModel);
                 }
             },
             components: {
