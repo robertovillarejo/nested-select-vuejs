@@ -16,20 +16,16 @@ export default {
       type: Boolean,
       default: true
     },
-    hierarchymodel: {
+    hierarchy: {
       type: Array,
       required: true
     }
   },
   data() {
     return {
-      selects: []
+      selects: [],
+      count: 0
     }
-  },
-  computed: {
-
-  },
-  created() {
   },
   mounted() {
     this.getChildren(0);
@@ -37,11 +33,12 @@ export default {
   methods: {
     getChildren: function (depth, selected) {
       var vi = this;
-      var currentNode = vi.hierarchymodel[depth];
+      var currentNode = vi.hierarchy[depth];
       if (currentNode.path) {
         const fixedPath = this.fixUrl(currentNode.path, selected);
         const url = vi.host + vi.context + fixedPath;
         axios.get(url).then(function (res) {
+          vi.count++;
           if (vi.selects.length == 0) {
             vi.selects = new Array(1);
           }
@@ -54,8 +51,10 @@ export default {
       }
     },
     selectChanged: function (value, selectIndex) {
-      if (selectIndex !== this.hierarchymodel.length - 1) {
-        //this.selects = this.selects.slice(0, selectIndex + 1);
+      if (selectIndex === this.hierarchy.length - 1) {
+        this.$emit('complete', value);
+      } else {
+        this.selects = this.selects.slice(0, selectIndex + 1);
         this.getChildren(selectIndex + 1, value);
       }
     },

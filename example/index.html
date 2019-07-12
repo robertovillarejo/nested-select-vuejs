@@ -9,7 +9,8 @@
 
 <body>
     <div id="app">
-        <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchymodel="hierarchyModel">
+        <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchy="hierarchyModel"
+            @complete="complete($event)">
         </nested-select>
     </div>
 
@@ -28,8 +29,18 @@
                             path: '/posts',
                             prop: 'id',
                             label: 'title'
+                        },
+                        {
+                            path: '/albums',
+                            prop: 'id',
+                            label: 'title'
                         }
                     ]
+                }
+            },
+            methods: {
+                complete: function(value) {
+                    console.log(value);
                 }
             },
             components: {

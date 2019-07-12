@@ -1711,7 +1711,7 @@
 	      type: Boolean,
 	      default: true
 	    },
-	    hierarchymodel: {
+	    hierarchy: {
 	      type: Array,
 	      required: true
 	    }
@@ -1719,13 +1719,10 @@
 
 	  data() {
 	    return {
-	      selects: []
+	      selects: [],
+	      count: 0
 	    };
 	  },
-
-	  computed: {},
-
-	  created() {},
 
 	  mounted() {
 	    this.getChildren(0);
@@ -1734,12 +1731,14 @@
 	  methods: {
 	    getChildren: function (depth, selected) {
 	      var vi = this;
-	      var currentNode = vi.hierarchymodel[depth];
+	      var currentNode = vi.hierarchy[depth];
 
 	      if (currentNode.path) {
 	        const fixedPath = this.fixUrl(currentNode.path, selected);
 	        const url = vi.host + vi.context + fixedPath;
 	        axios.get(url).then(function (res) {
+	          vi.count++;
+
 	          if (vi.selects.length == 0) {
 	            vi.selects = new Array(1);
 	          }
@@ -1753,8 +1752,10 @@
 	      }
 	    },
 	    selectChanged: function (value, selectIndex) {
-	      if (selectIndex !== this.hierarchymodel.length - 1) {
-	        //this.selects = this.selects.slice(0, selectIndex + 1);
+	      if (selectIndex === this.hierarchy.length - 1) {
+	        this.$emit('complete', value);
+	      } else {
+	        this.selects = this.selects.slice(0, selectIndex + 1);
 	        this.getChildren(selectIndex + 1, value);
 	      }
 	    },
@@ -1853,7 +1854,7 @@
 	const __vue_script__ = script;
 
 	/* template */
-	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},[_c('h1',[_vm._v("Nested Select Component")]),_vm._v(" "),_vm._l((_vm.selects),function(select,selectIndex){return _c('div',[_c('select',{attrs:{"name":'nested-select-' + selectIndex,"id":'nested-select-' + selectIndex},on:{"change":function($event){return _vm.selectChanged($event.target.value, selectIndex)}}},_vm._l((select.options),function(option){return _c('option',{domProps:{"value":option[select.prop]}},[_vm._v("\n        "+_vm._s(option[select.label])+"\n      ")])}),0)])})],2)};
+	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},_vm._l((_vm.selects),function(select,selectIndex){return _c('div',{key:_vm.count},[_c('select',{attrs:{"name":'nested-select-' + selectIndex,"id":'nested-select-' + selectIndex},on:{"change":function($event){return _vm.selectChanged($event.target.value, selectIndex)}}},_vm._l((select.options),function(option){return _c('option',{domProps:{"value":option[select.prop]}},[_vm._v("\n        "+_vm._s(option[select.label])+"\n      ")])}),0)])}),0)};
 	var __vue_staticRenderFns__ = [];
 
 	  /* style */
