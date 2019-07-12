@@ -9,14 +9,28 @@
 
 <body>
     <div id="app">
-        <nested-select></nested-select>
+        <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchymodel="hierarchyModel">
+        </nested-select>
     </div>
 
     <script type="text/javascript">
-        new Vue({
+        var vm = new Vue({
             el: '#app',
             data: function () {
-                return {}
+                return {
+                    hierarchyModel: [
+                        {
+                            path: '/users',
+                            prop: 'id',
+                            label: 'username'
+                        },
+                        {
+                            path: '/posts',
+                            prop: 'id',
+                            label: 'title'
+                        }
+                    ]
+                }
             },
             components: {
                 'nested-select': NestedSelect

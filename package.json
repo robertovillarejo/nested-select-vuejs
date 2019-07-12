@@ -10,7 +10,9 @@
   },
   "author": "Roberto Villarejo Martínez",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "rollup": "^1.16.7",

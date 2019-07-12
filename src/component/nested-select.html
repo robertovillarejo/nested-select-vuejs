@@ -1,5 +1,13 @@
-
 <section class="nested-select">
   <h1>Nested Select Component</h1>
-</section>
 
+  <div v-for="(select, selectIndex) in selects">
+    <select v-bind:name="'nested-select-' + selectIndex" v-bind:id="'nested-select-' + selectIndex" 
+      @change="selectChanged($event.target.value, selectIndex)">
+      <option v-for="option in select.options" v-bind:value="option[select.prop]">
+        {{ option[select.label] }}
+      </option>
+    </select>
+  </div>
+
+</section>
