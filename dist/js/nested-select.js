@@ -1707,10 +1707,6 @@
 	      type: String,
 	      default: '/api'
 	    },
-	    enable: {
-	      type: Boolean,
-	      default: true
-	    },
 	    hierarchy: {
 	      type: Array,
 	      required: true
@@ -1737,8 +1733,6 @@
 	        const fixedPath = this.fixUrl(currentNode.path, selected);
 	        const url = vi.host + vi.context + fixedPath;
 	        axios.get(url).then(function (res) {
-	          vi.count++;
-
 	          if (vi.selects.length == 0) {
 	            vi.selects = new Array(1);
 	          }
@@ -1748,12 +1742,15 @@
 	            prop: currentNode.prop,
 	            label: currentNode.label
 	          };
+	          vi.count++;
 	        });
 	      }
 	    },
 	    selectChanged: function (value, selectIndex) {
+	      console.log(value);
+
 	      if (selectIndex === this.hierarchy.length - 1) {
-	        this.$emit('complete', value);
+	        this.$emit('input', value);
 	      } else {
 	        this.selects = this.selects.slice(0, selectIndex + 1);
 	        this.getChildren(selectIndex + 1, value);
@@ -1854,7 +1851,7 @@
 	const __vue_script__ = script;
 
 	/* template */
-	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},_vm._l((_vm.selects),function(select,selectIndex){return _c('div',{key:_vm.count},[_c('select',{attrs:{"name":'nested-select-' + selectIndex,"id":'nested-select-' + selectIndex},on:{"change":function($event){return _vm.selectChanged($event.target.value, selectIndex)}}},_vm._l((select.options),function(option){return _c('option',{domProps:{"value":option[select.prop]}},[_vm._v("\n        "+_vm._s(option[select.label])+"\n      ")])}),0)])}),0)};
+	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},_vm._l((_vm.selects),function(select,selectIndex){return _c('div',{key:_vm.count},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(select.selected),expression:"select.selected"}],attrs:{"name":'nested-select-' + selectIndex,"id":'nested-select-' + selectIndex},on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(select, "selected", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);},function($event){return _vm.selectChanged(select.options[select.selected], selectIndex)}]}},_vm._l((select.options),function(option){return _c('option',{domProps:{"value":option[select.prop]}},[_vm._v("\n        "+_vm._s(option[select.label])+"\n      ")])}),0)])}),0)};
 	var __vue_staticRenderFns__ = [];
 
 	  /* style */

@@ -1,7 +1,7 @@
 <section class="nested-select">
   <div v-for="(select, selectIndex) in selects" :key="count">
     <select v-bind:name="'nested-select-' + selectIndex" v-bind:id="'nested-select-' + selectIndex"
-      @change="selectChanged($event.target.value, selectIndex)">
+      v-model="select.selected" @change="selectChanged(select.options[select.selected], selectIndex)">
       <option v-for="option in select.options" v-bind:value="option[select.prop]">
         {{ option[select.label] }}
       </option>

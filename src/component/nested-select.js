@@ -12,10 +12,6 @@ export default {
       type: String,
       default: '/api'
     },
-    enable: {
-      type: Boolean,
-      default: true
-    },
     hierarchy: {
       type: Array,
       required: true
@@ -38,7 +34,6 @@ export default {
         const fixedPath = this.fixUrl(currentNode.path, selected);
         const url = vi.host + vi.context + fixedPath;
         axios.get(url).then(function (res) {
-          vi.count++;
           if (vi.selects.length == 0) {
             vi.selects = new Array(1);
           }
@@ -47,12 +42,13 @@ export default {
             prop: currentNode.prop,
             label: currentNode.label
           };
+          vi.count++;
         });
       }
     },
     selectChanged: function (value, selectIndex) {
       if (selectIndex === this.hierarchy.length - 1) {
-        this.$emit('complete', value);
+        this.$emit('input', value);
       } else {
         this.selects = this.selects.slice(0, selectIndex + 1);
         this.getChildren(selectIndex + 1, value);

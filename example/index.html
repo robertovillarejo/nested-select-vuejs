@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchy="hierarchyModel"
-            @complete="complete($event)">
+            v-model="myModel">
         </nested-select>
     </div>
 
@@ -19,6 +19,7 @@
             el: '#app',
             data: function () {
                 return {
+                    myModel: undefined,
                     hierarchyModel: [
                         {
                             path: '/users',
@@ -36,11 +37,6 @@
                             label: 'title'
                         }
                     ]
-                }
-            },
-            methods: {
-                complete: function(value) {
-                    console.log(value);
                 }
             },
             components: {
