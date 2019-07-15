@@ -43,7 +43,8 @@ export default {
           vi.selects[depth] = {
             options: res.data || new Array(res),
             prop: currentNode.prop,
-            label: currentNode.label
+            label: currentNode.label,
+            selectLabel: currentNode.selectLabel
           };
           vi.count++;
         });

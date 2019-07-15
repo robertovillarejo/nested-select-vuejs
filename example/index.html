@@ -16,7 +16,7 @@
             <form>
                 <div class="form-group">
                     <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''"
-                        :hierarchy="hierarchyModel" v-model="myModel" @change="printMyModel" :required="requiredSelect">
+                        :hierarchy="hierarchyModel" v-model="myModel" :required="requiredSelect">
                     </nested-select>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
@@ -35,24 +35,22 @@
                         {
                             path: '/users',
                             prop: 'id',
-                            label: 'username'
+                            label: 'username',
+                            selectLabel: 'User: '
                         },
                         {
                             path: '/posts',
                             prop: 'id',
-                            label: 'title'
+                            label: 'title',
+                            selectLabel: 'Post: '
                         },
                         {
                             path: '/albums',
                             prop: 'id',
-                            label: 'title'
+                            label: 'title',
+                            selectLabel: 'Album'
                         }
                     ]
-                }
-            },
-            methods: {
-                printMyModel: function () {
-                    console.log(this.myModel);
                 }
             },
             components: {
