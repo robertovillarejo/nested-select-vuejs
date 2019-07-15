@@ -4,17 +4,24 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <script type="text/javascript" src="https://unpkg.com/vue@2.4.3/dist/vue.js"></script>
     <script type="text/javascript" src="../dist/js/nested-select.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Nested Select example</title>
 </head>
 
 <body>
     <div id="app">
-        <form action="">
-            <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchy="hierarchyModel"
-                v-model="myModel" @change="printMyModel" :required="false">
-            </nested-select>
-            <button type="submit">Send</button>
-        </form>        
+        <div class="col-md-9">
+            <h1>Nested Select Example</h1>
+            <form>
+                <div class="form-group">
+                    <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''"
+                        :hierarchy="hierarchyModel" v-model="myModel" @change="printMyModel" :required="requiredSelect">
+                    </nested-select>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -23,6 +30,7 @@
             data: function () {
                 return {
                     myModel: undefined,
+                    requiredSelect: true,
                     hierarchyModel: [
                         {
                             path: '/users',
@@ -43,7 +51,7 @@
                 }
             },
             methods: {
-                printMyModel: function() {
+                printMyModel: function () {
                     console.log(this.myModel);
                 }
             },
