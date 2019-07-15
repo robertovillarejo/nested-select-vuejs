@@ -9,9 +9,12 @@
 
 <body>
     <div id="app">
-        <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchy="hierarchyModel"
-            v-model="myModel" @change="printMyModel">
-        </nested-select>
+        <form action="">
+            <nested-select :host="'https://jsonplaceholder.typicode.com'" :context="''" :hierarchy="hierarchyModel"
+                v-model="myModel" @change="printMyModel" :required="false">
+            </nested-select>
+            <button type="submit">Send</button>
+        </form>        
     </div>
 
     <script type="text/javascript">

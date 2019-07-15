@@ -1710,6 +1710,9 @@
 	    hierarchy: {
 	      type: Array,
 	      required: true
+	    },
+	    required: {
+	      type: Boolean
 	    }
 	  },
 
@@ -1849,7 +1852,7 @@
 	const __vue_script__ = script;
 
 	/* template */
-	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},_vm._l((_vm.selects),function(select,selectIndex){return _c('div',{key:_vm.count},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(select.selected),expression:"select.selected"}],attrs:{"name":'nested-select-' + selectIndex,"id":'nested-select-' + selectIndex},on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(select, "selected", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);},function($event){return _vm.selectChanged(select.options[select.selected], selectIndex)}]}},_vm._l((select.options),function(option){return _c('option',{domProps:{"value":option[select.prop]}},[_vm._v("\n        "+_vm._s(option[select.label])+"\n      ")])}),0)])}),0)};
+	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"nested-select"},_vm._l((_vm.selects),function(select,selectIndex){return _c('div',{key:_vm.count},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(select.selected),expression:"select.selected"}],attrs:{"name":'nested-select-' + selectIndex,"id":'nested-select-' + selectIndex,"required":_vm.required},on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(select, "selected", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);},function($event){return _vm.selectChanged(select.options[select.selected], selectIndex)}]}},_vm._l((select.options),function(option){return _c('option',{domProps:{"value":option[select.prop]}},[_vm._v("\n        "+_vm._s(option[select.label])+"\n      ")])}),0)])}),0)};
 	var __vue_staticRenderFns__ = [];
 
 	  /* style */

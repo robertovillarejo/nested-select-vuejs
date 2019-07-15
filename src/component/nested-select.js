@@ -15,6 +15,9 @@ export default {
     hierarchy: {
       type: Array,
       required: true
+    },
+    required: {
+      type: Boolean
     }
   },
   data() {
