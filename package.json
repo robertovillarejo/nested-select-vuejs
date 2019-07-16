@@ -1,5 +1,5 @@
 {
-  "name": "nested-select",
+  "name": "@conacyt/nested-select",
   "version": "1.0.0",
   "description": "A VueJS component for rendering nested select HTML tags based on a hierarchy model",
   "main": "dist/js/nested-select.js",
