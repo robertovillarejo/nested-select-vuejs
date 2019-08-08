@@ -65,7 +65,7 @@ function (_super) {
 
   __decorate([Prop({
     type: String,
-    default: "/api"
+    default: ""
   })], NestedSelectComponent.prototype, "context", void 0);
 
   __decorate([Prop({

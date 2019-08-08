@@ -71,7 +71,7 @@ function (_super) {
 
   tslib_1.__decorate([vuePropertyDecorator.Prop({
     type: String,
-    default: "/api"
+    default: ""
   })], NestedSelectComponent.prototype, "context", void 0);
 
   tslib_1.__decorate([vuePropertyDecorator.Prop({

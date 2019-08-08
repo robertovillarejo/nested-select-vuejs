@@ -6,7 +6,6 @@
         <div class="form-group">
           <nested-select
             :host="'https://jsonplaceholder.typicode.com'"
-            :context="''"
             :hierarchy="hierarchyModel"
             v-model="myModel"
             :required="requiredSelect"

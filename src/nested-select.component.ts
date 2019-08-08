@@ -12,7 +12,7 @@ export default class NestedSelectComponent extends Vue {
     @Prop({ type: String, default: "" })
     readonly host!: string;
 
-    @Prop({ type: String, default: "/api" })
+    @Prop({ type: String, default: "" })
     readonly context!: string;
 
     @Prop({ type: Array, required: true })
