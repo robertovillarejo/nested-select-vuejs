@@ -12,7 +12,6 @@ To install with yarn use `yarn add @conacyt/nested-select`
 <div id="app">
     <nested-select
             :host="'https://jsonplaceholder.typicode.com'"
-            :context="''"
             :hierarchy="hierarchyModel"
             v-model="myModel"
             :required="requiredSelect">
