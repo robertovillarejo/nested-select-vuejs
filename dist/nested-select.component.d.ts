@@ -2,6 +2,7 @@ import { Vue } from "vue-property-decorator";
 export default class NestedSelectComponent extends Vue {
     selects: Array<any>;
     dummy: boolean;
+    readonly value: any;
     readonly host: string;
     readonly context: string;
     readonly hierarchy: Array<any>;

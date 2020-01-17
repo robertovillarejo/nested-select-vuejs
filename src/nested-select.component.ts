@@ -9,6 +9,9 @@ export default class NestedSelectComponent extends Vue {
 
     dummy = false;  //used for force rendering
 
+    @Prop({ default: {}, type: Object })
+    readonly value!: any;
+
     @Prop({ type: String, default: "" })
     readonly host!: string;
 

@@ -71,6 +71,11 @@ function (_super) {
   };
 
   __decorate([Prop({
+    default: {},
+    type: Object
+  })], NestedSelectComponent.prototype, "value", void 0);
+
+  __decorate([Prop({
     type: String,
     default: ""
   })], NestedSelectComponent.prototype, "host", void 0);
@@ -107,10 +112,13 @@ var __vue_render__ = function __vue_render__() {
 
   return _c('div', {
     key: _vm.dummy
+  }, [_c('div', {
+    staticClass: "form-group"
   }, _vm._l(_vm.selects, function (select, selectIndex) {
     return _c('div', {
       key: selectIndex
     }, [_c('label', {
+      staticClass: "form-control-label",
       attrs: {
         "for": 'nested-select-' + selectIndex
       }
@@ -121,6 +129,7 @@ var __vue_render__ = function __vue_render__() {
         value: select.selected,
         expression: "select.selected"
       }],
+      staticClass: "form-control",
       attrs: {
         "name": 'nested-select-' + selectIndex,
         "id": 'nested-select-' + selectIndex,
@@ -148,7 +157,7 @@ var __vue_render__ = function __vue_render__() {
         }
       }, [_vm._v(_vm._s(option[select.label]))]);
     }), 0)]);
-  }), 0);
+  }), 0)]);
 };
 
 var __vue_staticRenderFns__ = [];

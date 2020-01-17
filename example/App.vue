@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <div>
-      <h1>Nested Select Example</h1>
-      <form>
-        <div class="form-group">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <h1 class="text-center">Nested Select Example</h1>
+        <form>
           <nested-select
             :host="'https://jsonplaceholder.typicode.com'"
             :hierarchy="hierarchyModel"
@@ -11,41 +12,44 @@
             :required="requiredSelect"
             @complete="printPath($event)"
           ></nested-select>
-        </div>
-        <p></p>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
+          <p></p>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+      <div class="col-2"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue, { VueConstructor } from "vue";
-import NestedSelectComponent from "../src/NestedSelectComponent.vue";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { NestedSelectComponent } from "../src/index";
 
 export default Vue.extend({
   data: function() {
     return {
-      myModel: undefined,
+      myModel: null,
       requiredSelect: true,
       hierarchyModel: [
         {
           path: "/users",
           prop: "id",
           label: "username",
-          selectLabel: "User: "
+          selectLabel: "User"
         },
         {
           path: "/users/[id]/albums",
           prop: "id",
           label: "title",
-          selectLabel: "Album: "
+          selectLabel: "Album"
         },
         {
           path: "/albums/[id]/photos",
           prop: "id",
           label: "title",
-          selectLabel: "Photo: "
+          selectLabel: "Photo"
         }
       ]
     };

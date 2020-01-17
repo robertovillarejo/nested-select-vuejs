@@ -24,7 +24,7 @@ const config: Config = {
     }
     return config;
   },
-  externals: ["vue-class-component", "vue-property-decorator"]
+  externals: ["vue-class-component", "vue-property-decorator", "axios", "bootstrap", "jquery", "popper.js"]
 }
 
 export default config;

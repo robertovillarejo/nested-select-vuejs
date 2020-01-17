@@ -1,6 +1,6 @@
 {
   "name": "@conacyt/nested-select",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A VueJS component for rendering nested select HTML tags based on a hierarchy model",
   "keywords": [
     "vue",
@@ -26,6 +26,9 @@
   ],
   "dependencies": {
     "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.1"
   },
