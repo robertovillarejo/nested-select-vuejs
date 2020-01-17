@@ -57,11 +57,23 @@ function (_super) {
   NestedSelectComponent.prototype.selectChanged = function (value, selectIndex) {
     if (selectIndex === this.hierarchy.length - 1) {
       this.$emit("input", value);
+      this.$emit("complete", this.getPath());
     } else {
       this.selects = this.selects.slice(0, selectIndex + 1);
       var schema = this.hierarchy[selectIndex];
       this.getChildren(selectIndex + 1, value[schema.prop]);
     }
+  };
+
+  NestedSelectComponent.prototype.getPath = function () {
+    var parents = [];
+
+    for (var i = 0; i < this.selects.length; i++) {
+      var current = this.selects[i];
+      parents.push(current.options[current.selected - 1]);
+    }
+
+    return parents;
   };
 
   tslib_1.__decorate([vuePropertyDecorator.Prop({
@@ -108,7 +120,7 @@ var __vue_render__ = function __vue_render__() {
       attrs: {
         "for": 'nested-select-' + selectIndex
       }
-    }, [_vm._v("\n      " + _vm._s(select.selectLabel) + "\n    ")]), _vm._v(" "), _c('select', {
+    }, [_vm._v(_vm._s(select.selectLabel))]), _vm._v(" "), _c('select', {
       directives: [{
         name: "model",
         rawName: "v-model",

@@ -9,6 +9,7 @@
             :hierarchy="hierarchyModel"
             v-model="myModel"
             :required="requiredSelect"
+            @complete="printPath($event)"
           ></nested-select>
         </div>
         <p></p>
@@ -48,6 +49,11 @@ export default Vue.extend({
         }
       ]
     };
+  },
+  methods: {
+    printPath: function(path: Array<any>) {
+      console.log(path);
+    }
   },
   components: { "nested-select": NestedSelectComponent }
 });

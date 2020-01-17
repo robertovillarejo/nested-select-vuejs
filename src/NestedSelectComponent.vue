@@ -1,9 +1,9 @@
 <template>
   <div :key="dummy">
     <div v-for="(select, selectIndex) in selects" v-bind:key="selectIndex">
-      <label v-bind:for="'nested-select-' + selectIndex">
-        {{ select.selectLabel }}
-      </label>
+      <label v-bind:for="'nested-select-' + selectIndex">{{
+        select.selectLabel
+      }}</label>
       <select
         v-bind:name="'nested-select-' + selectIndex"
         v-bind:id="'nested-select-' + selectIndex"

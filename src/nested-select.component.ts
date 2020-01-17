@@ -1,6 +1,6 @@
 import axios from "axios";
 import Component from "vue-class-component";
-import { Vue, Prop } from "vue-property-decorator";
+import { Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class NestedSelectComponent extends Vue {
@@ -53,11 +53,21 @@ export default class NestedSelectComponent extends Vue {
     selectChanged(value: any, selectIndex: number): void {
         if (selectIndex === this.hierarchy.length - 1) {
             this.$emit("input", value);
+            this.$emit("complete", this.getPath());
         } else {
             this.selects = this.selects.slice(0, selectIndex + 1);
             let schema = this.hierarchy[selectIndex];
             this.getChildren(selectIndex + 1, value[schema.prop]);
         }
+    }
+
+    private getPath() {
+        let parents = [];
+        for (let i = 0; i < this.selects.length; i++) {
+            let current = this.selects[i];
+            parents.push(current.options[current.selected - 1]);
+        }
+        return parents;
     }
 
 }

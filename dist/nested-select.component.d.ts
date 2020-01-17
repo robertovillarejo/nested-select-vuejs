@@ -10,4 +10,5 @@ export default class NestedSelectComponent extends Vue {
     getChildren(depth: number, selected: any | undefined): void;
     fixUrl(path: string, selected: any): string;
     selectChanged(value: any, selectIndex: number): void;
+    private getPath;
 }
