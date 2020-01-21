@@ -157,14 +157,14 @@ var __vue_render__ = function __vue_render__() {
 
           _vm.$set(select, "selected", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
         }, function ($event) {
-          return _vm.selectChanged(select.options[select.selected - 1], selectIndex);
+          return _vm.selectChanged(select.selected, selectIndex);
         }]
       }
     }, _vm._l(select.options, function (option, optionIndex) {
       return _c('option', {
         key: optionIndex,
         domProps: {
-          "value": option[select.prop]
+          "value": option
         }
       }, [_vm._v(_vm._s(option[select.label]))]);
     }), 0)]);

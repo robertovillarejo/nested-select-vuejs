@@ -11,15 +11,13 @@
         v-bind:name="'nested-select-' + selectIndex"
         v-bind:id="'nested-select-' + selectIndex"
         v-model="select.selected"
-        @change="
-          selectChanged(select.options[select.selected - 1], selectIndex)
-        "
+        @change="selectChanged(select.selected, selectIndex)"
         :required="required"
       >
         <option
           v-for="(option, optionIndex) in select.options"
           v-bind:key="optionIndex"
-          v-bind:value="option[select.prop]"
+          v-bind:value="option"
           >{{ option[select.label] }}</option
         >
       </select>
