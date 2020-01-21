@@ -59,6 +59,7 @@ function (_super) {
       this.$emit("input", value);
       this.$emit("complete", this.getPath());
     } else {
+      this.$emit('input', null);
       this.selects = this.selects.slice(0, selectIndex + 1);
       var schema = this.hierarchy[selectIndex];
       this.getChildren(selectIndex + 1, value[schema.prop]);
@@ -117,9 +118,13 @@ var __vue_render__ = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    key: _vm.dummy
-  }, [_c('div', {
-    staticClass: "form-group"
+    key: _vm.dummy,
+    staticClass: "form-group",
+    on: {
+      "submit": function submit($event) {
+        $event.preventDefault();
+      }
+    }
   }, _vm._l(_vm.selects, function (select, selectIndex) {
     return _c('div', {
       key: selectIndex
@@ -163,7 +168,7 @@ var __vue_render__ = function __vue_render__() {
         }
       }, [_vm._v(_vm._s(option[select.label]))]);
     }), 0)]);
-  }), 0)]);
+  }), 0);
 };
 
 var __vue_staticRenderFns__ = [];
