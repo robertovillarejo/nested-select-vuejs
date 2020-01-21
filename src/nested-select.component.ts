@@ -58,6 +58,7 @@ export default class NestedSelectComponent extends Vue {
             this.$emit("input", value);
             this.$emit("complete", this.getPath());
         } else {
+            this.$emit('input', null);
             this.selects = this.selects.slice(0, selectIndex + 1);
             let schema = this.hierarchy[selectIndex];
             this.getChildren(selectIndex + 1, value[schema.prop]);
