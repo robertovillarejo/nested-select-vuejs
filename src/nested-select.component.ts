@@ -4,7 +4,6 @@ import { Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class NestedSelectComponent extends Vue {
-
     selects: Array<any> = [];
 
     dummy = false;  //used for force rendering
@@ -69,7 +68,7 @@ export default class NestedSelectComponent extends Vue {
         let parents = [];
         for (let i = 0; i < this.selects.length; i++) {
             let current = this.selects[i];
-            parents.push(current.options[current.selected - 1]);
+            parents.push(current.selected);
         }
         return parents;
     }

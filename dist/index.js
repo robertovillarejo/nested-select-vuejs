@@ -71,7 +71,7 @@ function (_super) {
 
     for (var i = 0; i < this.selects.length; i++) {
       var current = this.selects[i];
-      parents.push(current.options[current.selected - 1]);
+      parents.push(current.selected);
     }
 
     return parents;
