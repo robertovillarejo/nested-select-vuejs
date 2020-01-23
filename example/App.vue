@@ -5,7 +5,7 @@
       <form>
         <div class="form-group">
           <nested-select
-            :host="'https://jsonplaceholder.typicode.com'"
+            :host="'http://localhost:3000'"
             :hierarchy="hierarchyModel"
             v-model="myModel"
             :required="requiredSelect"
@@ -29,22 +29,16 @@ export default Vue.extend({
       requiredSelect: true,
       hierarchyModel: [
         {
-          path: "/users",
+          path: "/clasificaciones",
           prop: "id",
-          label: "username",
-          selectLabel: "User: "
+          label: "nombre",
+          selectLabel: "clasificaciones: "
         },
         {
-          path: "/users/[id]/albums",
+          path: "/clasificaciones/[id]/peliculas",
           prop: "id",
-          label: "title",
-          selectLabel: "Album: "
-        },
-        {
-          path: "/albums/[id]/photos",
-          prop: "id",
-          label: "title",
-          selectLabel: "Photo: "
+          label: "nombre",
+          selectLabel: "peliculas: "
         }
       ]
     };

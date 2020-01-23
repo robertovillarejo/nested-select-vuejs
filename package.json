@@ -16,9 +16,10 @@
   "unpkg": "dist/index.umd.js",
   "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve example/main.ts",
+    "serve": "vue-cli-service serve example/main.ts & npm run api-json",
     "build": "bili",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "api-json": "json-server --watch db.json"
   },
   "files": [
     "/dist",
@@ -69,7 +70,7 @@
       "plugin:vue/essential",
       "@vue/prettier",
       "@vue/typescript"
-    ],
+    ], 
     "rules": {
       "no-console": "off"
     },
