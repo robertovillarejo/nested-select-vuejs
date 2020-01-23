@@ -2,33 +2,27 @@
   "clasificaciones": [
     {
       "nombre": "Drama",
-      "id": 1,
-      "categoria": "A"
+      "id": 1
     },
     {
       "nombre": "Comedia",
-      "id": 2,
-      "categoria": "B"
+      "id": 2
     },
     {
       "nombre": "Documental",
-      "id": 3,
-      "categoria": "C"
+      "id": 3
     },
     {
       "nombre": "Acción",
-      "id": 4,
-      "categoria": "D"
+      "id": 4
     },
     {
       "nombre": "Anime",
-      "id": 5,
-      "categoria": "E"
+      "id": 5
     },
     {
       "nombre": "Terror",
-      "id": 6,
-      "categoria": "F"
+      "id": 6
     }
   ],
   "peliculas": [
@@ -36,55 +30,46 @@
       "id": 1,
       "nombre": "El sexto sentido",
       "director": "M. Night Shyamalan",
-      "clasificacion": "Drama"
+      "categoria": "A"
     },
     {
       "id": 2,
       "nombre": "Pulp Fiction",
       "director": "Tarantino",
-      "clasificacion": "Acción"
+      "clasificacion": "Acción",
+      "categoria": "B"
     },
     {
-      "id": 3,
-      "nombre": "Todo Sobre Mi Madre",
-      "director": "Almodobar",
-      "clasificacion": "Drama"
-    },
-    {
-      "id": 4,
-      "nombre": "300",
-      "director": "Zack Snyder",
-      "clasificacion": "Acción"
-    },
-    {
-      "id": 5,
-      "nombre": "El silencio de los corderos",
-      "director": "Jonathan Demme",
-      "clasificacion": "Drama"
-    },
-    {
-      "id": 6,
+      "clasificacionesId": 6,
+      "id": 7,
       "nombre": "Forrest Gump",
       "director": "Robert Zemeckis",
-      "clasificacion": "Comedia"
+      "clasificacion": "Comedia",
+      "categoria": "C"
     },
     {
-      "id": 7,
+      "clasificacionesId": 7,
+      "id": 8,
       "nombre": "Las Hurdes",
       "director": "Luis Buñuel",
-      "clasificacion": "Documental"
+      "clasificacion": "Documental",
+      "categoria": "D"
     },
     {
-      "id": 8,
+      "clasificacionesId": 8,
+      "id": 9,
       "nombre": "Dragon ball super",
       "director": "Luis Buñuel",
-      "clasificacion": "Anime"
+      "clasificacion": "Anime",
+      "categoria": "E"
     },
     {
-      "id": 9,
+      "clasificacionesId": 9,
+      "id": 10,
       "nombre": "La llorona",
       "director": "Gustavo M.S",
-      "clasificacion": "Terror"
+      "clasificacion": "Terror",
+      "categoria": "F"
     }
   ]
 }
