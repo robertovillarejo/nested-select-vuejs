@@ -11,7 +11,17 @@
             v-model="myModel"
             :required="requiredSelect"
             @complete="printPath($event)"
-          ></nested-select>
+          >
+            <template slot="0"
+              >User</template
+            >
+            <template slot="1"
+              >Album</template
+            >
+            <template slot="2"
+              >Photo</template
+            >
+          </nested-select>
           <p></p>
           <button type="submit" class="btn btn-primary">Send</button>
         </form>
@@ -36,20 +46,17 @@ export default Vue.extend({
         {
           path: "/users",
           prop: "id",
-          label: "username",
-          selectLabel: "User"
+          label: "username"
         },
         {
           path: "/users/[id]/albums",
           prop: "id",
-          label: "title",
-          selectLabel: "Album"
+          label: "title"
         },
         {
           path: "/albums/[id]/photos",
           prop: "id",
-          label: "title",
-          selectLabel: "Photo"
+          label: "title"
         }
       ]
     };

@@ -18,7 +18,7 @@ function (_super) {
   }
 
   NestedSelectComponent.prototype.mounted = function () {
-    this.getChildren(0, undefined);
+    this.getChildren(0);
   };
 
   NestedSelectComponent.prototype.getChildren = function (depth, selected) {
@@ -72,6 +72,7 @@ function (_super) {
   };
 
   __decorate([Prop({
+    required: false,
     default: {},
     type: Object
   })], NestedSelectComponent.prototype, "value", void 0);
@@ -127,7 +128,7 @@ var __vue_render__ = function __vue_render__() {
       attrs: {
         "for": 'nested-select-' + selectIndex
       }
-    }, [_vm._v(_vm._s(select.selectLabel))]), _vm._v(" "), _c('select', {
+    }, [_vm._t(selectIndex)], 2), _vm._v(" "), _c('select', {
       directives: [{
         name: "model",
         rawName: "v-model",

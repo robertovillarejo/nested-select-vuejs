@@ -8,7 +8,7 @@ export default class NestedSelectComponent extends Vue {
 
     dummy = false;  //used for force rendering
 
-    @Prop({ default: {}, type: Object })
+    @Prop({ required: false, default: {}, type: Object })
     readonly value!: any;
 
     @Prop({ type: String, default: "" })
@@ -24,10 +24,10 @@ export default class NestedSelectComponent extends Vue {
     readonly required!: boolean;
 
     mounted() {
-        this.getChildren(0, undefined);
+        this.getChildren(0);
     }
 
-    getChildren(depth: number, selected: any | undefined): void {
+    getChildren(depth: number, selected?: any): void {
         var vm = this;
         var currentNode = vm.hierarchy[depth];
         if (currentNode.path) {

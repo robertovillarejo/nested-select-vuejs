@@ -8,7 +8,7 @@ export default class NestedSelectComponent extends Vue {
     readonly hierarchy: Array<any>;
     readonly required: boolean;
     mounted(): void;
-    getChildren(depth: number, selected: any | undefined): void;
+    getChildren(depth: number, selected?: any): void;
     fixUrl(path: string, selected: any): string;
     selectChanged(value: any, selectIndex: number): void;
     private getPath;
