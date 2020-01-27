@@ -30,45 +30,49 @@
       "id": 1,
       "nombre": "El sexto sentido",
       "director": "M. Night Shyamalan",
+      "clasificacionId": 1,
       "categoria": "A"
     },
     {
       "id": 2,
       "nombre": "Pulp Fiction",
       "director": "Tarantino",
-      "clasificacion": "Acción",
+      "clasificacionId":2,
       "categoria": "B"
     },
     {
-      "clasificacionesId": 6,
-      "id": 7,
+      "id": 3,
       "nombre": "Forrest Gump",
       "director": "Robert Zemeckis",
-      "clasificacion": "Comedia",
+      "clasificacionId": 3,
       "categoria": "C"
     },
     {
-      "clasificacionesId": 7,
-      "id": 8,
+      "id": 4,
       "nombre": "Las Hurdes",
       "director": "Luis Buñuel",
-      "clasificacion": "Documental",
+      "clasificacionId": 4,
       "categoria": "D"
     },
     {
-      "clasificacionesId": 8,
-      "id": 9,
+      "id": 5,
       "nombre": "Dragon ball super",
       "director": "Luis Buñuel",
-      "clasificacion": "Anime",
+      "clasificacionId": 5,
       "categoria": "E"
     },
     {
-      "clasificacionesId": 9,
-      "id": 10,
+      "id": 6,
       "nombre": "La llorona",
       "director": "Gustavo M.S",
-      "clasificacion": "Terror",
+      "clasificacionId": 6,
+      "categoria": "F"
+    },
+    {
+      "id": 7,
+      "nombre": "El despertar del diablo",
+      "director": "Gustavo M.S",
+      "clasificacionId": 6,
       "categoria": "F"
     }
   ]

@@ -32,13 +32,13 @@ export default Vue.extend({
           path: "/clasificaciones",
           prop: "id",
           label: "nombre",
-          selectLabel: "clasificaciones: "
+          selectLabel: "clasificacion : "
         },
         {
-          path: "/clasificaciones/[id]/peliculas",
+          path: "/peliculas?clasificacionId=[id]",
           prop: "id",
           label: "nombre",
-          selectLabel: "peliculas: "
+          selectLabel: "pelicula : "
         }
       ]
     };
